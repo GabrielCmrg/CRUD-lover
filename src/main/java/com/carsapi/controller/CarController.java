@@ -13,6 +13,8 @@ import com.carsapi.dto.CarDTO;
 import com.carsapi.model.Car;
 import com.carsapi.repository.CarRepository;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/car")
 public class CarController {
@@ -26,7 +28,7 @@ public class CarController {
   }
 
   @PostMapping
-  public void create(@RequestBody CarDTO reqCarDTO) {
+  public void create(@RequestBody @Valid CarDTO reqCarDTO) {
     repository.save(new Car(reqCarDTO));
     System.out.println("Adicionado carro:");
     System.out.println(reqCarDTO.modelo());

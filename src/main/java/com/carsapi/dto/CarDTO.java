@@ -1,5 +1,7 @@
 package com.carsapi.dto;
 
-public record CarDTO(String modelo, String fabricante, String dataFabricacao, double valor, int anoModelo) {
+import java.util.Date;
+
+public record CarDTO(String modelo, String fabricante, Date dataFabricacao, double valor, int anoModelo) {
 
 }
